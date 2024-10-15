@@ -23,11 +23,15 @@ ul {
   list-style: none;
 }
 
-nav {
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.menu {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0.625rem;
+  padding: 1rem 0.625rem;
   width: 245px;
   position: fixed;
   height: 100vh;
@@ -35,28 +39,27 @@ nav {
   border-right: 1px solid var(--dark-gray-color);
 }
 
-nav .instagramLogo {
-  font-family: 'Lobster';
-  font-size: 1.5rem;
-  padding: 0.625rem;
-  margin-top: 0.75rem;
-}
-
-nav .fa-instagram {
+.menu .instagramLogo .fa-instagram {
   display: none;
 }
 
-nav .menu .mainMenu {
+.menu .instagramLogo .instagramTxt {
+  font-family: 'Lobster', serif;
+  font-size: 1.5rem;
+}
+
+.menu .mainMenu {
   padding-top: 1.25rem;
 }
 
-nav .menu li {
+.menu li,
+.instagramLogo {
   padding: 15px;
   display: flex;
   align-items: center;
 }
 
-nav .menu li:hover {
+.menu li:hover {
   border-radius: 10px;
   background-color: var(--dark-gray-color);
   i,
@@ -65,22 +68,22 @@ nav .menu li:hover {
   }
 }
 
-nav .menu i {
+.menu i {
   font-size: 24px;
   width: 30px;
 }
 
-nav .menu img {
+.menu ul li img {
   border-radius: 100%;
   width: 24px;
   margin-right: 6px;
 }
 
-nav .menu span {
+.menu ul li span {
   padding-left: 10px;
 }
 
-nav .menu .threadsAndMore {
+.menu .threadsAndMore {
   padding-top: 200px;
   padding-bottom: 20px;
 }
@@ -109,7 +112,7 @@ main .story {
 main .story li {
   display: flex;
   flex-direction: column;
-  padding: 8px 4px;
+  padding: 0.5rem 0.25rem;
   align-items: center;
   width: 4.25rem;
 }
@@ -266,6 +269,10 @@ footer ul {
   flex-wrap: wrap;
 }
 
+footer ul li {
+  color: var(--footer-color);
+}
+
 footer ul li:not(:last-child)::after {
   content: '\00B7';
   padding: 0 0.25rem;
@@ -278,17 +285,30 @@ footer .copyright {
 }
 
 @media screen and (max-width: 1263px) {
-  nav {
+  .menu {
     width: 73px;
   }
-  nav .menu ul li span {
+  .menu ul li {
+    justify-content: center;
+  }
+  .menu ul li span {
     display: none;
   }
-  nav .instagramLogo {
-    display: none;
+  .menu .instagramLogo:hover {
+    border-radius: 10px;
+    background-color: var(--dark-gray-color);
+    i {
+      background-color: var(--dark-gray-color);
+    }
   }
-  nav .fa-instagram {
+  .menu .instagramLogo .fa-instagram {
     display: block;
+  }
+  .menu .instagramLogo .instagramTxt {
+    display: none;
+  }
+  .menu ul li img {
+    margin-right: 0;
   }
   main {
     left: 73px;

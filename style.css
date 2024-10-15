@@ -102,14 +102,16 @@ main .storyAndArticle {
 
 main .story {
   display: flex;
+  justify-content: space-between;
   margin: 10px 0;
 }
 
 main .story li {
   display: flex;
   flex-direction: column;
-  padding: 8px;
+  padding: 8px 4px;
   align-items: center;
+  width: 4.25rem;
 }
 
 main .story li .storyColor {
@@ -130,6 +132,10 @@ main .story li img {
 
 main .story li span {
   font-size: 0.75rem;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 main article {
@@ -250,11 +256,25 @@ aside .recommendedProfile .profile .mutualFriend {
   font-size: 0.75rem;
 }
 
+footer {
+  font-size: 0.75rem;
+}
+
+footer ul {
+  display: flex;
+  padding: 0.5rem;
+  flex-wrap: wrap;
+}
+
+footer ul li:not(:last-child)::after {
+  content: '\00B7';
+  padding: 0 0.25rem;
+}
+
 footer .copyright {
   padding: 0.5rem;
   color: var(--footer-color);
   text-transform: uppercase;
-  font-size: 0.75rem;
 }
 
 @media screen and (max-width: 1263px) {

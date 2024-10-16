@@ -92,15 +92,15 @@ main {
   display: flex;
   width: calc(100% - 245px);
   justify-content: center;
-  left: 245px;
   position: absolute;
+  left: 245px;
 }
 
 main .storyAndArticle {
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  width: 630px;
+  margin: 10px 0;
 }
 
 main .story {
@@ -144,9 +144,10 @@ main .story li span {
 main article {
   display: flex;
   flex-direction: column;
-  padding: 0px 80px;
-  width: 630px;
+  margin: 0px 80px;
   font-size: 0.875rem;
+  border-bottom: 1px solid var(--dark-gray-color);
+  padding: 16px 0;
 }
 
 main article .heading {
@@ -191,19 +192,28 @@ main article .articleIcons .fa-bookmark {
 
 main article .likeNumber,
 .content,
-.seeAllComments,
-.writeComments {
+.viewAllComments,
+.addComments {
   padding: 3px 0px;
 }
 
-main article .seeAllComments,
-.writeComments {
+main article .viewAllComments,
+.addComments {
   color: var(--light-gray-color);
 }
 
+main article .addComments {
+  display: flex;
+}
+
+main article .addComments .fa-face-smile {
+  margin-left: auto;
+}
+
 aside {
-  padding: 30px;
-  width: 360px;
+  margin-top: 2rem;
+  padding-left: 4rem;
+  width: 22.5rem;
   font-size: 14px;
 }
 
@@ -235,24 +245,28 @@ aside .profile .profileInfo .name,
   color: var(--light-gray-color);
 }
 
-aside .profile .changeAccount,
+aside .profile .switch,
 .follow {
   margin-left: auto;
   color: var(--blue-color);
   font-size: 0.75rem;
 }
 
-aside .recommend {
+aside .suggest {
   display: flex;
   padding: 1rem 0.5rem;
 }
 
-aside .recommend .seeAll {
+aside .suggest .suggestedForYou {
+  color: var(--light-gray-color);
+}
+
+aside .suggest .seeAll {
   margin-left: auto;
   font-size: 0.75rem;
 }
 
-aside .recommendedProfile .profile .mutualFriend {
+aside .suggestedProfile .profile .mutualFriend {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

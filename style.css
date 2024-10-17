@@ -39,6 +39,11 @@ body {
   border-right: 1px solid var(--dark-gray-color);
 }
 
+.menu ul {
+  display: flex;
+  flex-direction: column;
+}
+
 .menu .instagramLogo .fa-instagram {
   display: none;
 }
@@ -101,12 +106,14 @@ main .storyAndArticle {
   flex-direction: column;
   width: 630px;
   margin: 10px 0;
+  align-items: center;
 }
 
 main .story {
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
+  width: 100%;
 }
 
 main .story li {
@@ -144,10 +151,10 @@ main .story li span {
 main article {
   display: flex;
   flex-direction: column;
-  margin: 0px 80px;
   font-size: 0.875rem;
   border-bottom: 1px solid var(--dark-gray-color);
   padding: 16px 0;
+  width: 470px;
 }
 
 main article .heading {
@@ -333,5 +340,38 @@ footer .copyright {
 @media screen and (max-width: 1159px) {
   aside {
     display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .menu {
+    flex-direction: row;
+    left: auto;
+    bottom: 0;
+    height: 49px;
+    width: 100vw;
+    z-index: 1;
+    padding: 0;
+  }
+  .menu .instagramLogo,
+  .menu .threadsAndMore {
+    display: none;
+  }
+  .menu .mainMenu {
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 0;
+    border-top: 1px solid var(--dark-gray-color);
+  }
+  .menu .mainMenu li:not(.responsiveMenu) {
+    display: none;
+  }
+  .menu .mainMenu li span {
+    display: none;
+  }
+  main {
+    width: 100%;
+    left: auto;
   }
 }

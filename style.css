@@ -127,6 +127,7 @@ main .story li {
   padding: 0.5rem 0.25rem;
   align-items: center;
   width: 4.25rem;
+  gap: 0.25rem;
 }
 
 main .story li .storyColor {
@@ -176,8 +177,19 @@ main article .heading .id {
   margin-left: 7px;
 }
 
+main article .heading .id::after {
+  content: '\00B7';
+  padding: 0 0.25rem;
+  color: var(--light-gray-color);
+}
+
+main article .heading .time {
+  color: var(--light-gray-color);
+}
+
 main article .heading .fa-ellipsis {
   margin-left: auto;
+  font-size: 20px;
 }
 
 main article .mainImage img {
